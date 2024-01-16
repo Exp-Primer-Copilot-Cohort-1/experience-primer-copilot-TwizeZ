@@ -1,5 +1,12 @@
 function SkillsMember() {
-  this.name = 'John Doe',
-  this.age = 25,
-  this.skills = ['JavaScript', 'React', 'Node']
+    return {
+        restrict: 'E',
+        templateUrl: 'templates/member.html',
+        scope: {
+            member: '='
+        },
+        controller: function ($scope) {
+            $scope.skills = $scope.member.skills;
+        }
+    }
 }
